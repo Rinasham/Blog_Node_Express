@@ -23,7 +23,7 @@ const posts = []
 
 app.get('/', (req, res) => {
   console.log(posts);
-  res.render('home', {post : homeStartingContent})
+  res.render('home', {homeStartingContent : homeStartingContent, posts: posts})
 })
 
 app.get('/about', (req, res) => {
