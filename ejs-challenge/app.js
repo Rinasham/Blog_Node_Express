@@ -24,7 +24,9 @@ const posts = []
 
 app.get('/', (req, res) => {
   console.log(posts);
-  res.render('home', {homeStartingContent : homeStartingContent, posts: posts})
+  res.render('home', {
+    homeStartingContent : homeStartingContent,
+    posts: posts})
 })
 
 app.get('/about', (req, res) => {
@@ -72,9 +74,15 @@ app.get('/post/:title', (req, res) => {
 
     if(storedTitle === requestedTitle){
     console.log('match')
+    res.render('post', {
+      title: post.title,
+      content: post.content
+    })
     } else {
       console.log('no match.....');
     }
+
+
   })
 })
 
